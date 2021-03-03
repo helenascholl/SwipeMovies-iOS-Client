@@ -9,21 +9,24 @@
 /* Begin PBXBuildFile section */
 		C373ABAD25EFCF8B00E5CCE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373ABAC25EFCF8B00E5CCE0 /* AppDelegate.swift */; };
 		C373ABAF25EFCF8B00E5CCE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373ABAE25EFCF8B00E5CCE0 /* SceneDelegate.swift */; };
-		C373ABB125EFCF8B00E5CCE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373ABB025EFCF8B00E5CCE0 /* ViewController.swift */; };
 		C373ABB425EFCF8B00E5CCE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C373ABB225EFCF8B00E5CCE0 /* Main.storyboard */; };
 		C373ABB625EFCF8B00E5CCE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C373ABB525EFCF8B00E5CCE0 /* Assets.xcassets */; };
 		C373ABB925EFCF8B00E5CCE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C373ABB725EFCF8B00E5CCE0 /* LaunchScreen.storyboard */; };
+		C373ABC125EFDA9D00E5CCE0 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373ABC025EFDA9D00E5CCE0 /* TableViewController.swift */; };
+		C373ABC325EFDB2700E5CCE0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373ABC225EFDB2700E5CCE0 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C373ABA925EFCF8B00E5CCE0 /* SwipeMovies-iOS-Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwipeMovies-iOS-Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C373ABAC25EFCF8B00E5CCE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C373ABAE25EFCF8B00E5CCE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C373ABB025EFCF8B00E5CCE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C373ABB325EFCF8B00E5CCE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C373ABB525EFCF8B00E5CCE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C373ABB825EFCF8B00E5CCE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C373ABBA25EFCF8B00E5CCE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C373ABC025EFDA9D00E5CCE0 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		C373ABC225EFDB2700E5CCE0 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		C373ABC625EFEF1800E5CCE0 /* auth.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = auth.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +61,13 @@
 			children = (
 				C373ABAC25EFCF8B00E5CCE0 /* AppDelegate.swift */,
 				C373ABAE25EFCF8B00E5CCE0 /* SceneDelegate.swift */,
-				C373ABB025EFCF8B00E5CCE0 /* ViewController.swift */,
 				C373ABB225EFCF8B00E5CCE0 /* Main.storyboard */,
 				C373ABB525EFCF8B00E5CCE0 /* Assets.xcassets */,
 				C373ABB725EFCF8B00E5CCE0 /* LaunchScreen.storyboard */,
 				C373ABBA25EFCF8B00E5CCE0 /* Info.plist */,
+				C373ABC025EFDA9D00E5CCE0 /* TableViewController.swift */,
+				C373ABC225EFDB2700E5CCE0 /* Movie.swift */,
+				C373ABC625EFEF1800E5CCE0 /* auth.xcconfig */,
 			);
 			path = "SwipeMovies-iOS-Client";
 			sourceTree = "<group>";
@@ -138,9 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C373ABB125EFCF8B00E5CCE0 /* ViewController.swift in Sources */,
 				C373ABAD25EFCF8B00E5CCE0 /* AppDelegate.swift in Sources */,
 				C373ABAF25EFCF8B00E5CCE0 /* SceneDelegate.swift in Sources */,
+				C373ABC125EFDA9D00E5CCE0 /* TableViewController.swift in Sources */,
+				C373ABC325EFDB2700E5CCE0 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +174,7 @@
 /* Begin XCBuildConfiguration section */
 		C373ABBB25EFCF8B00E5CCE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C373ABC625EFEF1800E5CCE0 /* auth.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -228,6 +235,7 @@
 		};
 		C373ABBC25EFCF8B00E5CCE0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C373ABC625EFEF1800E5CCE0 /* auth.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -282,6 +290,7 @@
 		};
 		C373ABBE25EFCF8B00E5CCE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C373ABC625EFEF1800E5CCE0 /* auth.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +308,7 @@
 		};
 		C373ABBF25EFCF8B00E5CCE0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C373ABC625EFEF1800E5CCE0 /* auth.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
