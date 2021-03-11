@@ -4,34 +4,48 @@ class ViewController: UIViewController {
     
     let queue = DispatchQueue(label: "download")
     var movies: [Movie] = []
-    var currentIndex: Int?
+    var currentIndex: Int = -1
+    var currentPage: Int = 1
     var swipedRight: [Movie] = []
     var swipedLeft: [Movie] = []
 
     @IBOutlet weak var movieTitle: UILabel!
     
     @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
-        if sender.state == .ended {
-            print("right")
+        if currentIndex >= 0 {
+            print("Swiped right: \(movies[currentIndex].title)")
+            swipedRight.append(movies[currentIndex])
+            showNextMovie()
         }
-        
-        if let index = currentIndex {
-            print("Swiped right: \(movies[index].title)")
-            swipedRight.append(movies[index])
+    }
+    
+    @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
+        if currentIndex >= 0 {
+            print("Swiped left: \(movies[currentIndex].title)")
+            swipedLeft.append(movies[currentIndex])
+            showNextMovie()
         }
     }
     
     override func viewDidLoad() {
-        self.view.isUserInteractionEnabled = true
         super.viewDidLoad()
-
-        queue.async {
-            if let url = self.getTMDbUrl(page: 1) {
-                self.downloadMovies(url)
-            } else {
-                print("Cannot resolve URL")
+        addNewMovies() {
+            self.currentIndex += 1
+            self.currentPage += 1
+            self.movieTitle.text = self.movies[self.currentIndex].title
+        }
+    }
+    
+    func showNextMovie() {
+        currentIndex += 1
+        
+        if currentIndex == movies.count - 3 {
+            addNewMovies() {
+                self.currentPage += 1
             }
         }
+        
+        movieTitle.text = movies[currentIndex].title
     }
     
     func getTMDbUrl(page: Int) -> URL? {
@@ -44,7 +58,17 @@ class ViewController: UIViewController {
         return Bundle.main.infoDictionary?["TMDb API Key"] as! String
     }
     
-    func downloadMovies(_ url: URL) {
+    func addNewMovies(_ callback: @escaping () -> ()) {
+        queue.async {
+            if let url = self.getTMDbUrl(page: self.currentPage) {
+                self.downloadMovies(url, callback)
+            } else {
+                print("Cannot resolve URL")
+            }
+        }
+    }
+    
+    func downloadMovies(_ url: URL, _ callback: @escaping () -> ()) {
         if let data = try? Data(contentsOf: url) {
             if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any], let movies = json["results"] as? [Any] {
                 var downloadedMovies: [Movie] = []
@@ -59,9 +83,8 @@ class ViewController: UIViewController {
                 }
                 
                 DispatchQueue.main.async {
-                    self.movies = downloadedMovies
-                    self.currentIndex = 0
-                    self.movieTitle.text = downloadedMovies[self.currentIndex!].title
+                    self.movies.append(contentsOf: downloadedMovies)
+                    callback()
                 }
             }
         } else {
