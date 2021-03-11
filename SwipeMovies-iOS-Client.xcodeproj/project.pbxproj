@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B954BD4925FA024B002CFEA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B954BD4825FA024B002CFEA1 /* ViewController.swift */; };
 		C373ABAD25EFCF8B00E5CCE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373ABAC25EFCF8B00E5CCE0 /* AppDelegate.swift */; };
 		C373ABAF25EFCF8B00E5CCE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373ABAE25EFCF8B00E5CCE0 /* SceneDelegate.swift */; };
 		C373ABB425EFCF8B00E5CCE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C373ABB225EFCF8B00E5CCE0 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B954BD4825FA024B002CFEA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C373ABA925EFCF8B00E5CCE0 /* SwipeMovies-iOS-Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwipeMovies-iOS-Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C373ABAC25EFCF8B00E5CCE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C373ABAE25EFCF8B00E5CCE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				C373ABB525EFCF8B00E5CCE0 /* Assets.xcassets */,
 				C373ABB725EFCF8B00E5CCE0 /* LaunchScreen.storyboard */,
 				C373ABBA25EFCF8B00E5CCE0 /* Info.plist */,
+				B954BD4825FA024B002CFEA1 /* ViewController.swift */,
 				C373ABC025EFDA9D00E5CCE0 /* TableViewController.swift */,
 				C373ABC225EFDB2700E5CCE0 /* Movie.swift */,
 				C373ABC625EFEF1800E5CCE0 /* auth.xcconfig */,
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B954BD4925FA024B002CFEA1 /* ViewController.swift in Sources */,
 				C373ABAD25EFCF8B00E5CCE0 /* AppDelegate.swift in Sources */,
 				C373ABAF25EFCF8B00E5CCE0 /* SceneDelegate.swift in Sources */,
 				C373ABC125EFDA9D00E5CCE0 /* TableViewController.swift in Sources */,
