@@ -12,6 +12,23 @@ class Movie {
     var description: String
     var posterUrl: String
     
-    var overview: String
+}
+
+enum SwipeDirection {
+    
+    case left
+    case right
+    
+}
+
+class SwipedMovie {
+    
+    init(_ movie: Movie, _ swipeDirection: SwipeDirection) {
+        self.movie = movie
+        self.swipeDirection = swipeDirection
+    }
+    
+    var movie: Movie
+    var swipeDirection: SwipeDirection
     
 }
