@@ -15,17 +15,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eO1-LC-2oS">
-                                <rect key="frame" x="207" y="448" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QAa-0K-IqL">
+                                <rect key="frame" x="132" y="235.5" width="150" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="QAa-0K-IqL" secondAttribute="height" multiplier="2:3" id="Bww-lI-tVi"/>
+                                    <constraint firstAttribute="width" constant="150" id="fOQ-rl-AU3"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eO1-LC-2oS">
+                                <rect key="frame" x="82" y="498" width="250" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="U0v-mX-W3y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUl-vF-1cb">
+                                <rect key="frame" x="82" y="513" width="250" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="tdj-JX-szD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="QAa-0K-IqL" firstAttribute="centerX" secondItem="GPB-bw-xhq" secondAttribute="centerX" id="B0x-0z-iqR"/>
+                            <constraint firstItem="iUl-vF-1cb" firstAttribute="top" secondItem="eO1-LC-2oS" secondAttribute="bottom" constant="15" id="CBo-pH-Wpf"/>
+                            <constraint firstItem="iUl-vF-1cb" firstAttribute="centerX" secondItem="GPB-bw-xhq" secondAttribute="centerX" id="EaT-45-c2r"/>
+                            <constraint firstItem="QAa-0K-IqL" firstAttribute="centerY" secondItem="GPB-bw-xhq" secondAttribute="centerY" constant="-100" id="LA4-cy-y3N"/>
+                            <constraint firstItem="eO1-LC-2oS" firstAttribute="centerY" secondItem="GPB-bw-xhq" secondAttribute="centerY" constant="50" id="Uc1-VJ-xDB"/>
                             <constraint firstItem="eO1-LC-2oS" firstAttribute="centerX" secondItem="GPB-bw-xhq" secondAttribute="centerX" id="UoT-FP-qM7"/>
-                            <constraint firstItem="eO1-LC-2oS" firstAttribute="centerY" secondItem="GPB-bw-xhq" secondAttribute="centerY" id="jSB-Ax-xie"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qEX-3v-Ph7"/>
                         <connections>
@@ -34,7 +57,9 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="movieTitle" destination="eO1-LC-2oS" id="iVV-8a-wru"/>
+                        <outlet property="movieDescription" destination="iUl-vF-1cb" id="vtK-mE-hTc"/>
+                        <outlet property="moviePoster" destination="QAa-0K-IqL" id="91H-fQ-Rc3"/>
+                        <outlet property="movieTitle" destination="eO1-LC-2oS" id="DyX-Pl-dIB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MyB-ea-WMx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

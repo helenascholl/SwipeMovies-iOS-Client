@@ -3,7 +3,7 @@ import UIKit
 class ViewController: UIViewController {
     
     let queue = DispatchQueue(label: "download")
-    let posterBaseUrl = "https://image.tmdb.org/t/p/original"
+    let posterBaseUrl = "https://image.tmdb.org/t/p/w200"
     let userId = "test"
     
     var movies: [Movie] = []
@@ -12,8 +12,10 @@ class ViewController: UIViewController {
     var swipedRight: [Movie] = []
     var swipedLeft: [Movie] = []
 
+    @IBOutlet weak var moviePoster: UIImageView!
     @IBOutlet weak var movieTitle: UILabel!
-    
+    @IBOutlet weak var movieDescription: UILabel!
+
     @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
         if currentIndex >= 0 {
             print("Swiped right: \(movies[currentIndex].title)")
@@ -35,9 +37,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addNewMovies() {
-            self.currentIndex += 1
             self.currentPage += 1
-            self.movieTitle.text = self.movies[self.currentIndex].title
+            self.showNextMovie()
         }
     }
     
@@ -50,7 +51,12 @@ class ViewController: UIViewController {
             }
         }
         
+        let posterUrl = URL(string: movies[currentIndex].posterUrl)
+        let imageData = try! Data(contentsOf: posterUrl!)
+        
+        moviePoster.image = UIImage(data: imageData)
         movieTitle.text = movies[currentIndex].title
+        movieDescription.text = movies[currentIndex].description
     }
     
     func getTMDbUrl(page: Int) -> URL? {
