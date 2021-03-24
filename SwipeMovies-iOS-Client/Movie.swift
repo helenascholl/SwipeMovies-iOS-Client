@@ -1,11 +1,17 @@
 class Movie {
     
-    init(_ title: String, _ overview: String) {
+    init(_ id: Int, _ title: String, _ description: String, _ posterUrl: String) {
+        self.id = id
         self.title = title
-        self.overview = overview
+        self.description = description
+        self.posterUrl = posterUrl
     }
     
+    var id: Int
     var title: String
+    var description: String
+    var posterUrl: String
+    
     var overview: String
     
 }
