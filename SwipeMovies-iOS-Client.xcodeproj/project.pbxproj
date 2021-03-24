@@ -13,7 +13,6 @@
 		C373ABB425EFCF8B00E5CCE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C373ABB225EFCF8B00E5CCE0 /* Main.storyboard */; };
 		C373ABB625EFCF8B00E5CCE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C373ABB525EFCF8B00E5CCE0 /* Assets.xcassets */; };
 		C373ABB925EFCF8B00E5CCE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C373ABB725EFCF8B00E5CCE0 /* LaunchScreen.storyboard */; };
-		C373ABC125EFDA9D00E5CCE0 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373ABC025EFDA9D00E5CCE0 /* TableViewController.swift */; };
 		C373ABC325EFDB2700E5CCE0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373ABC225EFDB2700E5CCE0 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +25,6 @@
 		C373ABB525EFCF8B00E5CCE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C373ABB825EFCF8B00E5CCE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C373ABBA25EFCF8B00E5CCE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C373ABC025EFDA9D00E5CCE0 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		C373ABC225EFDB2700E5CCE0 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		C373ABC625EFEF1800E5CCE0 /* auth.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = auth.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,7 +66,6 @@
 				C373ABB725EFCF8B00E5CCE0 /* LaunchScreen.storyboard */,
 				C373ABBA25EFCF8B00E5CCE0 /* Info.plist */,
 				B954BD4825FA024B002CFEA1 /* ViewController.swift */,
-				C373ABC025EFDA9D00E5CCE0 /* TableViewController.swift */,
 				C373ABC225EFDB2700E5CCE0 /* Movie.swift */,
 				C373ABC625EFEF1800E5CCE0 /* auth.xcconfig */,
 			);
@@ -149,7 +146,6 @@
 				B954BD4925FA024B002CFEA1 /* ViewController.swift in Sources */,
 				C373ABAD25EFCF8B00E5CCE0 /* AppDelegate.swift in Sources */,
 				C373ABAF25EFCF8B00E5CCE0 /* SceneDelegate.swift in Sources */,
-				C373ABC125EFDA9D00E5CCE0 /* TableViewController.swift in Sources */,
 				C373ABC325EFDB2700E5CCE0 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
