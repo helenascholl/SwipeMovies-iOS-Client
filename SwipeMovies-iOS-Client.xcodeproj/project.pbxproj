@@ -27,6 +27,7 @@
 		C373ABBA25EFCF8B00E5CCE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C373ABC225EFDB2700E5CCE0 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		C373ABC625EFEF1800E5CCE0 /* auth.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = auth.xcconfig; sourceTree = "<group>"; };
+		C3DC281F260BD9E8005F9AC9 /* auth.xcconfig.template */ = {isa = PBXFileReference; lastKnownFileType = text; path = auth.xcconfig.template; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +69,7 @@
 				B954BD4825FA024B002CFEA1 /* ViewController.swift */,
 				C373ABC225EFDB2700E5CCE0 /* Movie.swift */,
 				C373ABC625EFEF1800E5CCE0 /* auth.xcconfig */,
+				C3DC281F260BD9E8005F9AC9 /* auth.xcconfig.template */,
 			);
 			path = "SwipeMovies-iOS-Client";
 			sourceTree = "<group>";
