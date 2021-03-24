@@ -3,6 +3,9 @@ import UIKit
 class ViewController: UIViewController {
     
     let queue = DispatchQueue(label: "download")
+    let posterBaseUrl = "https://image.tmdb.org/t/p/original"
+    let userId = "test"
+    
     var movies: [Movie] = []
     var currentIndex: Int = -1
     var currentPage: Int = 1
@@ -15,6 +18,7 @@ class ViewController: UIViewController {
         if currentIndex >= 0 {
             print("Swiped right: \(movies[currentIndex].title)")
             swipedRight.append(movies[currentIndex])
+            postSwipedMovie(SwipedMovie(movies[currentIndex], .right))
             showNextMovie()
         }
     }
@@ -23,6 +27,7 @@ class ViewController: UIViewController {
         if currentIndex >= 0 {
             print("Swiped left: \(movies[currentIndex].title)")
             swipedLeft.append(movies[currentIndex])
+            postSwipedMovie(SwipedMovie(movies[currentIndex], .left))
             showNextMovie()
         }
     }
@@ -75,10 +80,12 @@ class ViewController: UIViewController {
                 
                 for movie in movies {
                     if let dict = movie as? [String: Any] {
+                        let id = dict["id"] as! Int
                         let title = dict["title"] as! String
-                        let overview = dict["overview"] as! String
+                        let description = dict["overview"] as! String
+                        let posterUrl = posterBaseUrl + (dict["poster_path"] as! String)
                         
-                        downloadedMovies.append(Movie(title, overview))
+                        downloadedMovies.append(Movie(id, title, description, posterUrl))
                     }
                 }
                 
@@ -89,6 +96,36 @@ class ViewController: UIViewController {
             }
         } else {
             print("Download failed")
+        }
+    }
+    
+    func getBackendUrl() -> String {
+        return Bundle.main.infoDictionary?["Backend URL"] as! String
+    }
+    
+    func postSwipedMovie(_ swipedMovie: SwipedMovie) {
+        if let url = URL(string: "\(getBackendUrl())/api/movies/user/\(userId)") {
+            let json: [String: Any] = [
+                "movie": [
+                    "id": swipedMovie.movie.id,
+                    "title": swipedMovie.movie.title,
+                    "description": swipedMovie.movie.description,
+                    "posterUrl": swipedMovie.movie.posterUrl
+                ],
+                "swipeDirection": swipedMovie.swipeDirection == .right ? "right" : "left"
+            ]
+            
+            if let jsonData = try? JSONSerialization.data(withJSONObject: json) {
+                var request = URLRequest(url: url)
+                
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                
+                request.httpMethod = "POST"
+                request.httpBody = jsonData
+                
+                let task = URLSession.shared.dataTask(with: request)
+                task.resume()
+            }
         }
     }
 
