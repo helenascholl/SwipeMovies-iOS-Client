@@ -116,7 +116,7 @@ class ViewController: UIViewController {
     }
     
     func postSwipedMovie(_ swipedMovie: SwipedMovie) {
-        if let url = URL(string: "\(getBackendUrl())/api/movies/user/\(userId)") {
+        if let url = URL(string: "\(getBackendUrl())/api/users/\(userId)/movies") {
             let json: [String: Any] = [
                 "movie": [
                     "id": swipedMovie.movie.id,
