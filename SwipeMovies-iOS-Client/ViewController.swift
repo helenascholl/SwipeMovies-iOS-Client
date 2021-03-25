@@ -51,12 +51,18 @@ class ViewController: UIViewController {
             }
         }
         
-        let posterUrl = URL(string: movies[currentIndex].posterUrl)
-        let imageData = try! Data(contentsOf: posterUrl!)
-        
-        moviePoster.image = UIImage(data: imageData)
+        moviePoster.image = nil
         movieTitle.text = movies[currentIndex].title
         movieDescription.text = movies[currentIndex].description
+        
+        queue.async {
+            let posterUrl = URL(string: self.movies[self.currentIndex].posterUrl)
+            let imageData = try! Data(contentsOf: posterUrl!)
+            
+            DispatchQueue.main.async {
+                self.moviePoster.image = UIImage(data: imageData)
+            }
+        }
     }
     
     func getTMDbUrl(page: Int) -> URL? {

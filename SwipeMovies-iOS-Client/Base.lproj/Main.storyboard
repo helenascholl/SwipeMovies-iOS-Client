@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HvJ-MO-co0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HvJ-MO-co0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,6 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="LK6-7N-QHD">
+                                <rect key="frame" x="197" y="338" width="20" height="20"/>
+                            </activityIndicatorView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QAa-0K-IqL">
                                 <rect key="frame" x="132" y="235.5" width="150" height="225"/>
                                 <constraints>
@@ -41,16 +46,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="qEX-3v-Ph7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="LK6-7N-QHD" firstAttribute="centerY" secondItem="GPB-bw-xhq" secondAttribute="centerY" constant="-100" id="8bu-0G-Qbe"/>
                             <constraint firstItem="QAa-0K-IqL" firstAttribute="centerX" secondItem="GPB-bw-xhq" secondAttribute="centerX" id="B0x-0z-iqR"/>
                             <constraint firstItem="iUl-vF-1cb" firstAttribute="top" secondItem="eO1-LC-2oS" secondAttribute="bottom" constant="15" id="CBo-pH-Wpf"/>
                             <constraint firstItem="iUl-vF-1cb" firstAttribute="centerX" secondItem="GPB-bw-xhq" secondAttribute="centerX" id="EaT-45-c2r"/>
                             <constraint firstItem="QAa-0K-IqL" firstAttribute="centerY" secondItem="GPB-bw-xhq" secondAttribute="centerY" constant="-100" id="LA4-cy-y3N"/>
                             <constraint firstItem="eO1-LC-2oS" firstAttribute="centerY" secondItem="GPB-bw-xhq" secondAttribute="centerY" constant="50" id="Uc1-VJ-xDB"/>
                             <constraint firstItem="eO1-LC-2oS" firstAttribute="centerX" secondItem="GPB-bw-xhq" secondAttribute="centerX" id="UoT-FP-qM7"/>
+                            <constraint firstItem="LK6-7N-QHD" firstAttribute="centerX" secondItem="GPB-bw-xhq" secondAttribute="centerX" id="hjV-ef-krc"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="qEX-3v-Ph7"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="4fK-cb-OOq" appends="YES" id="20g-Mn-8Cc"/>
                             <outletCollection property="gestureRecognizers" destination="tCo-Di-cnT" appends="YES" id="OMg-Hi-M69"/>
@@ -77,4 +84,9 @@
             <point key="canvasLocation" x="775" y="133"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
