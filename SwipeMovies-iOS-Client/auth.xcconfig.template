@@ -1,2 +1,1 @@
-TMDB_API_KEY=yourapikey
-BACKEND_URL=https:/$()/yourbackend.com
+BACKEND_URL = https:/$()/yourbackend.com

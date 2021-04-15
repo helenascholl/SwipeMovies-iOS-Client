@@ -65,19 +65,9 @@ class ViewController: UIViewController {
         }
     }
     
-    func getTMDbUrl(page: Int) -> URL? {
-        let urlString = "https://api.themoviedb.org/3/trending/movie/week?api_key=\(getTMDbApiKey())&page=\(page)"
-        
-        return URL(string: urlString)
-    }
-    
-    func getTMDbApiKey() -> String {
-        return Bundle.main.infoDictionary?["TMDb API Key"] as! String
-    }
-    
     func addNewMovies(_ callback: @escaping () -> ()) {
         queue.async {
-            if let url = self.getTMDbUrl(page: self.currentPage) {
+            if let url = URL(string: "\(self.getBackendUrl())/api/users/\(self.userId)/movies") {
                 self.downloadMovies(url, callback)
             } else {
                 print("Cannot resolve URL")
@@ -87,15 +77,15 @@ class ViewController: UIViewController {
     
     func downloadMovies(_ url: URL, _ callback: @escaping () -> ()) {
         if let data = try? Data(contentsOf: url) {
-            if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any], let movies = json["results"] as? [Any] {
+            if let movies = try? JSONSerialization.jsonObject(with: data, options: []) as? [Any] {
                 var downloadedMovies: [Movie] = []
                 
                 for movie in movies {
                     if let dict = movie as? [String: Any] {
                         let id = dict["id"] as! Int
                         let title = dict["title"] as! String
-                        let description = dict["overview"] as! String
-                        let posterUrl = posterBaseUrl + (dict["poster_path"] as! String)
+                        let description = dict["description"] as! String
+                        let posterUrl = dict["posterUrl"] as! String
                         
                         downloadedMovies.append(Movie(id, title, description, posterUrl))
                     }
