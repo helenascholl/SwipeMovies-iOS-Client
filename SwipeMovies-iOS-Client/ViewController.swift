@@ -4,7 +4,7 @@ class ViewController: UIViewController {
     
     let queue = DispatchQueue(label: "download")
     let posterBaseUrl = "https://image.tmdb.org/t/p/w200"
-    let userId = "test"
+    let userId = 0
     
     var movies: [Movie] = []
     var currentIndex: Int = -1
@@ -106,7 +106,7 @@ class ViewController: UIViewController {
     }
     
     func postSwipedMovie(_ swipedMovie: SwipedMovie) {
-        if let url = URL(string: "\(getBackendUrl())/api/users/\(userId)/movies") {
+        if let url = URL(string: "\(getBackendUrl())/api/users/\(userId)/movies/swiped") {
             let json: [String: Any] = [
                 "movie": [
                     "id": swipedMovie.movie.id,
