@@ -16,7 +16,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var movieDescription: UILabel!
 
-    @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
+    @IBAction func buttonRight(_ sender: Any) {
+        swipeRight()
+    }
+    
+    @IBAction func buttonLeft(_ sender: Any) {
+        swipeLeft()
+    }
+    
+    @IBAction func swipeGestureRight(_ sender: Any) {
+        swipeRight()
+    }
+    
+    @IBAction func swipeGestureLeft(_ sender: Any) {
+        swipeLeft()
+    }
+    
+    func swipeRight() {
         if currentIndex >= 0 {
             print("Swiped right: \(movies[currentIndex].title)")
             swipedRight.append(movies[currentIndex])
@@ -25,7 +41,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
+    func swipeLeft() {
         if currentIndex >= 0 {
             print("Swiped left: \(movies[currentIndex].title)")
             swipedLeft.append(movies[currentIndex])

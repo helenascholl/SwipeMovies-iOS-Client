@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B954BD4925FA024B002CFEA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B954BD4825FA024B002CFEA1 /* ViewController.swift */; };
+		C3147B2E2639F7D4005A314C /* swipe_right.png in Resources */ = {isa = PBXBuildFile; fileRef = C3147B2C2639F7D4005A314C /* swipe_right.png */; };
+		C3147B2F2639F7D4005A314C /* swipe_left.png in Resources */ = {isa = PBXBuildFile; fileRef = C3147B2D2639F7D4005A314C /* swipe_left.png */; };
 		C373ABAD25EFCF8B00E5CCE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373ABAC25EFCF8B00E5CCE0 /* AppDelegate.swift */; };
 		C373ABAF25EFCF8B00E5CCE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373ABAE25EFCF8B00E5CCE0 /* SceneDelegate.swift */; };
 		C373ABB425EFCF8B00E5CCE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C373ABB225EFCF8B00E5CCE0 /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		B954BD4825FA024B002CFEA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C3147B2C2639F7D4005A314C /* swipe_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipe_right.png; sourceTree = "<group>"; };
+		C3147B2D2639F7D4005A314C /* swipe_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipe_left.png; sourceTree = "<group>"; };
 		C373ABA925EFCF8B00E5CCE0 /* SwipeMovies-iOS-Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwipeMovies-iOS-Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C373ABAC25EFCF8B00E5CCE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C373ABAE25EFCF8B00E5CCE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 				C373ABC225EFDB2700E5CCE0 /* Movie.swift */,
 				C373ABC625EFEF1800E5CCE0 /* auth.xcconfig */,
 				C3DC281F260BD9E8005F9AC9 /* auth.xcconfig.template */,
+				C3147B2D2639F7D4005A314C /* swipe_left.png */,
+				C3147B2C2639F7D4005A314C /* swipe_right.png */,
 			);
 			path = "SwipeMovies-iOS-Client";
 			sourceTree = "<group>";
@@ -135,6 +141,8 @@
 				C373ABB925EFCF8B00E5CCE0 /* LaunchScreen.storyboard in Resources */,
 				C373ABB625EFCF8B00E5CCE0 /* Assets.xcassets in Resources */,
 				C373ABB425EFCF8B00E5CCE0 /* Main.storyboard in Resources */,
+				C3147B2E2639F7D4005A314C /* swipe_right.png in Resources */,
+				C3147B2F2639F7D4005A314C /* swipe_left.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HvJ-MO-co0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HvJ-MO-co0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,17 +16,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="LK6-7N-QHD">
-                                <rect key="frame" x="197" y="338" width="20" height="20"/>
+                                <rect key="frame" x="197" y="308" width="20" height="20"/>
                             </activityIndicatorView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QAa-0K-IqL">
-                                <rect key="frame" x="132" y="235.5" width="150" height="225"/>
+                                <rect key="frame" x="132" y="205.5" width="150" height="225"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QAa-0K-IqL" secondAttribute="height" multiplier="2:3" id="Bww-lI-tVi"/>
                                     <constraint firstAttribute="width" constant="150" id="fOQ-rl-AU3"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eO1-LC-2oS">
-                                <rect key="frame" x="82" y="498" width="250" height="0.0"/>
+                                <rect key="frame" x="82" y="468" width="250" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="U0v-mX-W3y"/>
                                 </constraints>
@@ -36,8 +34,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUl-vF-1cb">
-                                <rect key="frame" x="82" y="513" width="250" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUl-vF-1cb">
+                                <rect key="frame" x="82" y="483" width="250" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="tdj-JX-szD"/>
                                 </constraints>
@@ -45,19 +43,61 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swipe_right.png" translatesAutoresizingMaskIntoConstraints="NO" id="L92-DP-VDH">
+                                <rect key="frame" x="212" y="772" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="4sw-zs-Qr8"/>
+                                    <constraint firstAttribute="width" secondItem="L92-DP-VDH" secondAttribute="height" multiplier="1:1" id="ZMZ-58-Rwa"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swipe_left.png" translatesAutoresizingMaskIntoConstraints="NO" id="TV2-LI-zAI">
+                                <rect key="frame" x="132" y="772" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TV2-LI-zAI" secondAttribute="height" multiplier="1:1" id="77U-PZ-rNH"/>
+                                    <constraint firstAttribute="width" constant="70" id="Tk0-85-lVd"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zd-q6-T6E">
+                                <rect key="frame" x="212" y="772" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="3qq-O9-Mg7"/>
+                                    <constraint firstAttribute="width" secondItem="6zd-q6-T6E" secondAttribute="height" multiplier="1:1" id="MWU-qI-KDd"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="buttonRight:" destination="HvJ-MO-co0" eventType="touchUpInside" id="CxU-Ds-ec9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="weI-Ra-P9u">
+                                <rect key="frame" x="132" y="772" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="7z0-ck-xgq"/>
+                                    <constraint firstAttribute="width" secondItem="weI-Ra-P9u" secondAttribute="height" multiplier="1:1" id="Bbh-ci-INF"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="buttonLeft:" destination="HvJ-MO-co0" eventType="touchUpInside" id="G7s-qq-tPi"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="qEX-3v-Ph7"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="LK6-7N-QHD" firstAttribute="centerY" secondItem="GPB-bw-xhq" secondAttribute="centerY" constant="-100" id="8bu-0G-Qbe"/>
+                            <constraint firstItem="weI-Ra-P9u" firstAttribute="centerX" secondItem="TV2-LI-zAI" secondAttribute="centerX" id="5Zn-ur-GiJ"/>
+                            <constraint firstItem="LK6-7N-QHD" firstAttribute="centerY" secondItem="QAa-0K-IqL" secondAttribute="centerY" id="8bu-0G-Qbe"/>
                             <constraint firstItem="QAa-0K-IqL" firstAttribute="centerX" secondItem="GPB-bw-xhq" secondAttribute="centerX" id="B0x-0z-iqR"/>
                             <constraint firstItem="iUl-vF-1cb" firstAttribute="top" secondItem="eO1-LC-2oS" secondAttribute="bottom" constant="15" id="CBo-pH-Wpf"/>
                             <constraint firstItem="iUl-vF-1cb" firstAttribute="centerX" secondItem="GPB-bw-xhq" secondAttribute="centerX" id="EaT-45-c2r"/>
-                            <constraint firstItem="QAa-0K-IqL" firstAttribute="centerY" secondItem="GPB-bw-xhq" secondAttribute="centerY" constant="-100" id="LA4-cy-y3N"/>
-                            <constraint firstItem="eO1-LC-2oS" firstAttribute="centerY" secondItem="GPB-bw-xhq" secondAttribute="centerY" constant="50" id="Uc1-VJ-xDB"/>
+                            <constraint firstItem="QAa-0K-IqL" firstAttribute="centerY" secondItem="GPB-bw-xhq" secondAttribute="centerY" constant="-130" id="LA4-cy-y3N"/>
+                            <constraint firstItem="qEX-3v-Ph7" firstAttribute="bottom" secondItem="TV2-LI-zAI" secondAttribute="bottom" constant="20" id="Lhe-Tt-94N"/>
+                            <constraint firstItem="weI-Ra-P9u" firstAttribute="centerY" secondItem="TV2-LI-zAI" secondAttribute="centerY" id="OVw-KH-2i0"/>
+                            <constraint firstItem="TV2-LI-zAI" firstAttribute="centerX" secondItem="GPB-bw-xhq" secondAttribute="centerX" constant="-40" id="QiS-iN-p8O"/>
+                            <constraint firstItem="L92-DP-VDH" firstAttribute="centerX" secondItem="GPB-bw-xhq" secondAttribute="centerX" constant="40" id="QjB-CK-XUR"/>
+                            <constraint firstItem="6zd-q6-T6E" firstAttribute="centerX" secondItem="L92-DP-VDH" secondAttribute="centerX" id="USm-WC-cKc"/>
+                            <constraint firstItem="eO1-LC-2oS" firstAttribute="centerY" secondItem="GPB-bw-xhq" secondAttribute="centerY" constant="20" id="Uc1-VJ-xDB"/>
                             <constraint firstItem="eO1-LC-2oS" firstAttribute="centerX" secondItem="GPB-bw-xhq" secondAttribute="centerX" id="UoT-FP-qM7"/>
-                            <constraint firstItem="LK6-7N-QHD" firstAttribute="centerX" secondItem="GPB-bw-xhq" secondAttribute="centerX" id="hjV-ef-krc"/>
+                            <constraint firstItem="6zd-q6-T6E" firstAttribute="centerY" secondItem="L92-DP-VDH" secondAttribute="centerY" id="fjD-5S-9x3"/>
+                            <constraint firstItem="LK6-7N-QHD" firstAttribute="centerX" secondItem="QAa-0K-IqL" secondAttribute="centerX" id="hjV-ef-krc"/>
+                            <constraint firstItem="qEX-3v-Ph7" firstAttribute="bottom" secondItem="L92-DP-VDH" secondAttribute="bottom" constant="20" id="o6L-Lg-f8C"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="qEX-3v-Ph7"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="4fK-cb-OOq" appends="YES" id="20g-Mn-8Cc"/>
                             <outletCollection property="gestureRecognizers" destination="tCo-Di-cnT" appends="YES" id="OMg-Hi-M69"/>
@@ -72,12 +112,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MyB-ea-WMx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="4fK-cb-OOq">
                     <connections>
-                        <action selector="swipeRight:" destination="HvJ-MO-co0" id="8ZT-FG-wbI"/>
+                        <action selector="swipeGestureRight:" destination="HvJ-MO-co0" id="vXy-Ag-DeC"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="tCo-Di-cnT">
                     <connections>
-                        <action selector="swipeLeft:" destination="HvJ-MO-co0" id="Fs8-CX-dXN"/>
+                        <action selector="swipeGestureLeft:" destination="HvJ-MO-co0" id="j05-v3-mLf"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -85,8 +125,7 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="swipe_left.png" width="600" height="600"/>
+        <image name="swipe_right.png" width="600" height="600"/>
     </resources>
 </document>
