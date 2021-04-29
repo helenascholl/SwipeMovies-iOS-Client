@@ -32,7 +32,12 @@ class ViewController: UIViewController {
     @IBAction func createGroupButton(_ sender: Any) {
         if let name = createGroupText.text, let url = URL(string: "\(getBackendUrl())/api/groups") {
             let json: [String: Any] = [
-                "name": name
+                "user": [
+                    "id": userId
+                ],
+                "group": [
+                    "name": name
+                ]
             ]
             
             if let jsonData = try? JSONSerialization.data(withJSONObject: json) {
@@ -53,6 +58,10 @@ class ViewController: UIViewController {
     
     @IBAction func showSwipe(_ sender: Any) {
         performSegue(withIdentifier: "swipe", sender: self)
+    }
+    
+    @IBAction func showGroups(_ sender: Any) {
+        performSegue(withIdentifier: "group", sender: self)
     }
     
     func getBackendUrl() -> String {
