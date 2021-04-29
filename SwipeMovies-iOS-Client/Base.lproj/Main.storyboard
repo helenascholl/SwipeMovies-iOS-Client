@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MqA-Yj-Rb1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MqA-Yj-Rb1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Swipe View Controller-->
+        <!--swipe-->
         <scene sceneID="p12-yY-31F">
             <objects>
                 <viewController id="HvJ-MO-co0" customClass="SwipeViewController" customModule="SwipeMovies_iOS_Client" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,7 +59,7 @@
                                     <constraint firstAttribute="width" constant="70" id="Tk0-85-lVd"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zd-q6-T6E">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zd-q6-T6E">
                                 <rect key="frame" x="212" y="772" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="3qq-O9-Mg7"/>
@@ -67,7 +69,7 @@
                                     <action selector="buttonRight:" destination="HvJ-MO-co0" eventType="touchUpInside" id="CxU-Ds-ec9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="weI-Ra-P9u">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="weI-Ra-P9u">
                                 <rect key="frame" x="132" y="772" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="7z0-ck-xgq"/>
@@ -78,7 +80,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="qEX-3v-Ph7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="weI-Ra-P9u" firstAttribute="centerX" secondItem="TV2-LI-zAI" secondAttribute="centerX" id="5Zn-ur-GiJ"/>
                             <constraint firstItem="LK6-7N-QHD" firstAttribute="centerY" secondItem="QAa-0K-IqL" secondAttribute="centerY" id="8bu-0G-Qbe"/>
@@ -97,13 +100,12 @@
                             <constraint firstItem="LK6-7N-QHD" firstAttribute="centerX" secondItem="QAa-0K-IqL" secondAttribute="centerX" id="hjV-ef-krc"/>
                             <constraint firstItem="qEX-3v-Ph7" firstAttribute="bottom" secondItem="L92-DP-VDH" secondAttribute="bottom" constant="20" id="o6L-Lg-f8C"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="qEX-3v-Ph7"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="4fK-cb-OOq" appends="YES" id="20g-Mn-8Cc"/>
                             <outletCollection property="gestureRecognizers" destination="tCo-Di-cnT" appends="YES" id="OMg-Hi-M69"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="Ikr-qP-TGz"/>
+                    <navigationItem key="navigationItem" title="swipe" id="Ikr-qP-TGz"/>
                     <connections>
                         <outlet property="movieDescription" destination="iUl-vF-1cb" id="vtK-mE-hTc"/>
                         <outlet property="moviePoster" destination="QAa-0K-IqL" id="91H-fQ-Rc3"/>
@@ -122,7 +124,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1684.057971014493" y="132.58928571428572"/>
+            <point key="canvasLocation" x="1793" y="-212"/>
         </scene>
         <!--SwipeMovies-->
         <scene sceneID="L6g-y7-Mdc">
@@ -132,51 +134,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLM-mL-891">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLM-mL-891">
                                 <rect key="frame" x="137" y="393" width="40" height="30"/>
                                 <state key="normal" title="swipe"/>
                                 <connections>
                                     <action selector="showSwipe:" destination="kIz-Nr-1Fg" eventType="touchUpInside" id="2rU-Ki-WHk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alW-TT-8yU">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alW-TT-8yU">
                                 <rect key="frame" x="227.5" y="393" width="59" height="30"/>
                                 <state key="normal" title="matches"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wrz-pX-QpY">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wrz-pX-QpY">
                                 <rect key="frame" x="133" y="473" width="48" height="30"/>
                                 <state key="normal" title="groups"/>
+                                <connections>
+                                    <action selector="showGroups:" destination="kIz-Nr-1Fg" eventType="touchUpInside" id="rch-QF-d6I"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKL-iw-VJQ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKL-iw-VJQ">
                                 <rect key="frame" x="235" y="473" width="44" height="30"/>
                                 <state key="normal" title="profile"/>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="group id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fn6-8A-83e">
-                                <rect key="frame" x="50" y="764" width="204.5" height="34"/>
+                                <rect key="frame" x="50" y="118" width="204.5" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSh-uu-23Q">
-                                <rect key="frame" x="285.5" y="766" width="69" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSh-uu-23Q">
+                                <rect key="frame" x="285.5" y="120" width="69" height="30"/>
                                 <state key="normal" title="join group"/>
                                 <connections>
                                     <action selector="joinGroupButton:" destination="kIz-Nr-1Fg" eventType="touchUpInside" id="lnD-d6-JJ6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWI-eu-byR">
-                                <rect key="frame" x="276" y="810" width="88" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWI-eu-byR">
+                                <rect key="frame" x="276" y="164" width="88" height="30"/>
                                 <state key="normal" title="create group"/>
                                 <connections>
                                     <action selector="createGroupButton:" destination="kIz-Nr-1Fg" eventType="touchUpInside" id="dIY-vd-jWY"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="group name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gH2-7G-n3T">
-                                <rect key="frame" x="50" y="808" width="204.5" height="34"/>
+                                <rect key="frame" x="50" y="162" width="204.5" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6bH-R1-ycl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="gH2-7G-n3T" firstAttribute="leading" secondItem="6bH-R1-ycl" secondAttribute="leading" constant="50" id="6oS-lh-W8f"/>
                             <constraint firstItem="PKL-iw-VJQ" firstAttribute="centerY" secondItem="0Up-b6-CgW" secondAttribute="centerY" constant="40" id="8Kk-WJ-XMd"/>
@@ -192,12 +198,11 @@
                             <constraint firstItem="6bH-R1-ycl" firstAttribute="trailing" secondItem="LWI-eu-byR" secondAttribute="trailing" constant="50" id="hjU-Jv-2rY"/>
                             <constraint firstItem="Wrz-pX-QpY" firstAttribute="centerY" secondItem="0Up-b6-CgW" secondAttribute="centerY" constant="40" id="kJB-u7-4Oq"/>
                             <constraint firstItem="alW-TT-8yU" firstAttribute="centerY" secondItem="0Up-b6-CgW" secondAttribute="centerY" constant="-40" id="klu-iL-kMV"/>
-                            <constraint firstItem="6bH-R1-ycl" firstAttribute="bottom" secondItem="gH2-7G-n3T" secondAttribute="bottom" constant="20" id="mw8-Up-jsw"/>
+                            <constraint firstItem="Fn6-8A-83e" firstAttribute="top" secondItem="6bH-R1-ycl" secondAttribute="top" constant="30" id="mw8-Up-jsw"/>
                             <constraint firstItem="alW-TT-8yU" firstAttribute="centerX" secondItem="0Up-b6-CgW" secondAttribute="centerX" constant="50" id="qIj-mF-97s"/>
                             <constraint firstItem="PKL-iw-VJQ" firstAttribute="centerX" secondItem="0Up-b6-CgW" secondAttribute="centerX" constant="50" id="s6e-4d-Ppt"/>
                             <constraint firstItem="LWI-eu-byR" firstAttribute="trailing" secondItem="gH2-7G-n3T" secondAttribute="trailing" constant="109.5" id="w9w-s9-iU4"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6bH-R1-ycl"/>
                     </view>
                     <navigationItem key="navigationItem" title="SwipeMovies" id="f2G-bw-qUt">
                         <barButtonItem key="backBarButtonItem" title="Home" id="xDb-Jk-ok1"/>
@@ -206,11 +211,57 @@
                         <outlet property="createGroupText" destination="gH2-7G-n3T" id="Gtf-h9-6VI"/>
                         <outlet property="joinGroupText" destination="Fn6-8A-83e" id="NLS-e3-zvY"/>
                         <segue destination="HvJ-MO-co0" kind="show" identifier="swipe" id="DVF-do-sjM"/>
+                        <segue destination="XnC-dk-cgp" kind="show" identifier="group" id="GJf-oV-yXj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MHY-bz-ZeX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="889.85507246376824" y="132.58928571428572"/>
+        </scene>
+        <!--your groups-->
+        <scene sceneID="FRp-d2-dGW">
+            <objects>
+                <tableViewController id="XnC-dk-cgp" customClass="GroupViewController" customModule="SwipeMovies_iOS_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3J5-da-vE7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="group" textLabel="eUr-nb-uW1" detailTextLabel="6jb-5o-Gig" style="IBUITableViewCellStyleSubtitle" id="MWV-ve-iEF">
+                                <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MWV-ve-iEF" id="Fs9-cU-mti">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eUr-nb-uW1">
+                                            <rect key="frame" x="20" y="10" width="33" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6jb-5o-Gig">
+                                            <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="XnC-dk-cgp" id="XG2-0K-Elf"/>
+                            <outlet property="delegate" destination="XnC-dk-cgp" id="J28-e2-MVx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="your groups" id="Znx-CJ-a8C"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7ZD-Qv-sfU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1793" y="449"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BlN-mu-hhw">
@@ -234,5 +285,8 @@
     <resources>
         <image name="swipe_left.png" width="600" height="600"/>
         <image name="swipe_right.png" width="600" height="600"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
