@@ -32,3 +32,18 @@ class SwipedMovie {
     var swipeDirection: SwipeDirection
     
 }
+
+class Match {
+    
+    init(_ movie: Movie) {
+        self.movie = movie
+    }
+    
+    var movie: Movie
+    var users: [User] = []
+    
+    func addUser(_ user: User) -> Void {
+        users.append(user)
+    }
+    
+}
