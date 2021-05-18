@@ -25,6 +25,8 @@ class ViewController: UIViewController {
                 task.resume()
                 
                 joinGroupText.text = ""
+                
+                performSegue(withIdentifier: "group", sender: self)
             }
         }
     }
@@ -52,6 +54,8 @@ class ViewController: UIViewController {
                 task.resume()
                 
                 createGroupText.text = ""
+                
+                performSegue(withIdentifier: "group", sender: self)
             }
         }
     }
