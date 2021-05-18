@@ -13,6 +13,8 @@
 		C3147B2E2639F7D4005A314C /* swipe_right.png in Resources */ = {isa = PBXBuildFile; fileRef = C3147B2C2639F7D4005A314C /* swipe_right.png */; };
 		C3147B2F2639F7D4005A314C /* swipe_left.png in Resources */ = {isa = PBXBuildFile; fileRef = C3147B2D2639F7D4005A314C /* swipe_left.png */; };
 		C3147B332639FFFD005A314C /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3147B322639FFFD005A314C /* SwipeViewController.swift */; };
+		C3147B37265433EB005A314C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3147B36265433EB005A314C /* User.swift */; };
+		C3147B3B26543F66005A314C /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3147B3A26543F65005A314C /* MatchViewController.swift */; };
 		C373ABAD25EFCF8B00E5CCE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373ABAC25EFCF8B00E5CCE0 /* AppDelegate.swift */; };
 		C373ABAF25EFCF8B00E5CCE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373ABAE25EFCF8B00E5CCE0 /* SceneDelegate.swift */; };
 		C373ABB425EFCF8B00E5CCE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C373ABB225EFCF8B00E5CCE0 /* Main.storyboard */; };
@@ -28,6 +30,8 @@
 		C3147B2C2639F7D4005A314C /* swipe_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipe_right.png; sourceTree = "<group>"; };
 		C3147B2D2639F7D4005A314C /* swipe_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipe_left.png; sourceTree = "<group>"; };
 		C3147B322639FFFD005A314C /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
+		C3147B36265433EB005A314C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C3147B3A26543F65005A314C /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		C373ABA925EFCF8B00E5CCE0 /* SwipeMovies-iOS-Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwipeMovies-iOS-Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C373ABAC25EFCF8B00E5CCE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C373ABAE25EFCF8B00E5CCE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,13 +82,15 @@
 				C373ABBA25EFCF8B00E5CCE0 /* Info.plist */,
 				B954BD4825FA024B002CFEA1 /* ViewController.swift */,
 				C373ABC225EFDB2700E5CCE0 /* Movie.swift */,
+				C3147B36265433EB005A314C /* User.swift */,
+				B952DF36263A86DF00BFB66E /* Group.swift */,
 				C373ABC625EFEF1800E5CCE0 /* auth.xcconfig */,
 				C3DC281F260BD9E8005F9AC9 /* auth.xcconfig.template */,
-				C3147B2D2639F7D4005A314C /* swipe_left.png */,
-				C3147B2C2639F7D4005A314C /* swipe_right.png */,
 				C3147B322639FFFD005A314C /* SwipeViewController.swift */,
 				B952DF32263A862900BFB66E /* GroupViewController.swift */,
-				B952DF36263A86DF00BFB66E /* Group.swift */,
+				C3147B2D2639F7D4005A314C /* swipe_left.png */,
+				C3147B2C2639F7D4005A314C /* swipe_right.png */,
+				C3147B3A26543F65005A314C /* MatchViewController.swift */,
 			);
 			path = "SwipeMovies-iOS-Client";
 			sourceTree = "<group>";
@@ -166,7 +172,9 @@
 				B952DF33263A862900BFB66E /* GroupViewController.swift in Sources */,
 				C3147B332639FFFD005A314C /* SwipeViewController.swift in Sources */,
 				B954BD4925FA024B002CFEA1 /* ViewController.swift in Sources */,
+				C3147B37265433EB005A314C /* User.swift in Sources */,
 				C373ABAD25EFCF8B00E5CCE0 /* AppDelegate.swift in Sources */,
+				C3147B3B26543F66005A314C /* MatchViewController.swift in Sources */,
 				C373ABAF25EFCF8B00E5CCE0 /* SceneDelegate.swift in Sources */,
 				C373ABC325EFDB2700E5CCE0 /* Movie.swift in Sources */,
 			);
