@@ -68,6 +68,10 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "group", sender: self)
     }
     
+    @IBAction func showMatches(_ sender: Any) {
+        performSegue(withIdentifier: "match", sender: self)
+    }
+    
     func getBackendUrl() -> String {
         return Bundle.main.infoDictionary?["Backend URL"] as! String
     }
