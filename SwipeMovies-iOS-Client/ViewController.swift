@@ -3,11 +3,9 @@ import UIKit
 class ViewController: UIViewController {
     
     let userId = 0
-    let inputBottomDefaultValue = CGFloat(-30)
     
     @IBOutlet weak var joinGroupText: UITextField!
     @IBOutlet weak var createGroupText: UITextField!
-    @IBOutlet weak var inputBottom: NSLayoutConstraint!
     
     @IBAction func joinGroupButton(_ sender: Any) {
         if let id = joinGroupText.text, let url = URL(string: "\(getBackendUrl())/api/users/\(userId)/groups") {
@@ -79,8 +77,6 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        inputBottom.constant = inputBottomDefaultValue
-        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboadDidShow(keyBoardShowNotification:)), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboadDidHide(keyBoardHideNotification:)), name: UIResponder.keyboardDidHideNotification, object: nil)
     }
@@ -88,17 +84,17 @@ class ViewController: UIViewController {
     @objc func keyboadDidShow(keyBoardShowNotification notification: Notification) {
         if let userInfo = notification.userInfo, let keyboardRectangle = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
             UIView.animate(withDuration: 0.2, animations: {
-                self.inputBottom.constant = keyboardRectangle.height * -1
-                self.view.layoutIfNeeded()
+                self.view.frame.origin.y -= keyboardRectangle.height
             })
         }
     }
     
     @objc func keyboadDidHide(keyBoardHideNotification notification: Notification) {
-        UIView.animate(withDuration: 0.2, animations: {
-            self.inputBottom.constant = self.inputBottomDefaultValue
-            self.view.layoutIfNeeded()
-        })
+        if let userInfo = notification.userInfo, let keyboardRectangle = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
+            UIView.animate(withDuration: 0.2, animations: {
+                self.view.frame.origin.y += keyboardRectangle.height
+            })
+        }
     }
     
     func getBackendUrl() -> String {
