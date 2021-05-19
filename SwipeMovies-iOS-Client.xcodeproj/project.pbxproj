@@ -21,6 +21,10 @@
 		C373ABB625EFCF8B00E5CCE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C373ABB525EFCF8B00E5CCE0 /* Assets.xcassets */; };
 		C373ABB925EFCF8B00E5CCE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C373ABB725EFCF8B00E5CCE0 /* LaunchScreen.storyboard */; };
 		C373ABC325EFDB2700E5CCE0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373ABC225EFDB2700E5CCE0 /* Movie.swift */; };
+		C3DC28232655A5CE005F9AC9 /* swipe.png in Resources */ = {isa = PBXBuildFile; fileRef = C3DC28222655A5CE005F9AC9 /* swipe.png */; };
+		C3DC28252655B00E005F9AC9 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = C3DC28242655B00D005F9AC9 /* profile.png */; };
+		C3DC28272655B096005F9AC9 /* group.png in Resources */ = {isa = PBXBuildFile; fileRef = C3DC28262655B096005F9AC9 /* group.png */; };
+		C3DC28292655B102005F9AC9 /* match.png in Resources */ = {isa = PBXBuildFile; fileRef = C3DC28282655B101005F9AC9 /* match.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		C373ABC225EFDB2700E5CCE0 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		C373ABC625EFEF1800E5CCE0 /* auth.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = auth.xcconfig; sourceTree = "<group>"; };
 		C3DC281F260BD9E8005F9AC9 /* auth.xcconfig.template */ = {isa = PBXFileReference; lastKnownFileType = text; path = auth.xcconfig.template; sourceTree = "<group>"; };
+		C3DC28222655A5CE005F9AC9 /* swipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipe.png; sourceTree = "<group>"; };
+		C3DC28242655B00D005F9AC9 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		C3DC28262655B096005F9AC9 /* group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = group.png; sourceTree = "<group>"; };
+		C3DC28282655B101005F9AC9 /* match.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = match.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +97,10 @@
 				C3147B3A26543F65005A314C /* MatchViewController.swift */,
 				C3147B2D2639F7D4005A314C /* swipe_left.png */,
 				C3147B2C2639F7D4005A314C /* swipe_right.png */,
+				C3DC28222655A5CE005F9AC9 /* swipe.png */,
+				C3DC28282655B101005F9AC9 /* match.png */,
+				C3DC28262655B096005F9AC9 /* group.png */,
+				C3DC28242655B00D005F9AC9 /* profile.png */,
 				C373ABC625EFEF1800E5CCE0 /* auth.xcconfig */,
 				C3DC281F260BD9E8005F9AC9 /* auth.xcconfig.template */,
 			);
@@ -153,11 +165,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3DC28292655B102005F9AC9 /* match.png in Resources */,
 				C373ABB925EFCF8B00E5CCE0 /* LaunchScreen.storyboard in Resources */,
+				C3DC28272655B096005F9AC9 /* group.png in Resources */,
 				C373ABB625EFCF8B00E5CCE0 /* Assets.xcassets in Resources */,
 				C373ABB425EFCF8B00E5CCE0 /* Main.storyboard in Resources */,
 				C3147B2E2639F7D4005A314C /* swipe_right.png in Resources */,
+				C3DC28232655A5CE005F9AC9 /* swipe.png in Resources */,
 				C3147B2F2639F7D4005A314C /* swipe_left.png in Resources */,
+				C3DC28252655B00E005F9AC9 /* profile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
