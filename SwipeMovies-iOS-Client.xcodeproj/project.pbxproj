@@ -74,23 +74,23 @@
 		C373ABAB25EFCF8B00E5CCE0 /* SwipeMovies-iOS-Client */ = {
 			isa = PBXGroup;
 			children = (
+				C373ABB525EFCF8B00E5CCE0 /* Assets.xcassets */,
 				C373ABAC25EFCF8B00E5CCE0 /* AppDelegate.swift */,
 				C373ABAE25EFCF8B00E5CCE0 /* SceneDelegate.swift */,
 				C373ABB225EFCF8B00E5CCE0 /* Main.storyboard */,
-				C373ABB525EFCF8B00E5CCE0 /* Assets.xcassets */,
 				C373ABB725EFCF8B00E5CCE0 /* LaunchScreen.storyboard */,
 				C373ABBA25EFCF8B00E5CCE0 /* Info.plist */,
-				B954BD4825FA024B002CFEA1 /* ViewController.swift */,
 				C373ABC225EFDB2700E5CCE0 /* Movie.swift */,
 				C3147B36265433EB005A314C /* User.swift */,
 				B952DF36263A86DF00BFB66E /* Group.swift */,
-				C373ABC625EFEF1800E5CCE0 /* auth.xcconfig */,
-				C3DC281F260BD9E8005F9AC9 /* auth.xcconfig.template */,
+				B954BD4825FA024B002CFEA1 /* ViewController.swift */,
 				C3147B322639FFFD005A314C /* SwipeViewController.swift */,
 				B952DF32263A862900BFB66E /* GroupViewController.swift */,
+				C3147B3A26543F65005A314C /* MatchViewController.swift */,
 				C3147B2D2639F7D4005A314C /* swipe_left.png */,
 				C3147B2C2639F7D4005A314C /* swipe_right.png */,
-				C3147B3A26543F65005A314C /* MatchViewController.swift */,
+				C373ABC625EFEF1800E5CCE0 /* auth.xcconfig */,
+				C3DC281F260BD9E8005F9AC9 /* auth.xcconfig.template */,
 			);
 			path = "SwipeMovies-iOS-Client";
 			sourceTree = "<group>";
