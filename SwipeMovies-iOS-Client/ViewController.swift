@@ -72,6 +72,10 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "match", sender: self)
     }
     
+    @IBAction func tap(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
     func getBackendUrl() -> String {
         return Bundle.main.infoDictionary?["Backend URL"] as! String
     }

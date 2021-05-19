@@ -188,6 +188,9 @@
                             <constraint firstItem="LWI-eu-byR" firstAttribute="trailing" secondItem="gH2-7G-n3T" secondAttribute="trailing" constant="109.5" id="w9w-s9-iU4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6bH-R1-ycl"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="XC4-fR-9U2" appends="YES" id="ZxZ-9V-34N"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="SwipeMovies" id="f2G-bw-qUt">
                         <barButtonItem key="backBarButtonItem" title="home" id="xDb-Jk-ok1"/>
@@ -201,6 +204,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MHY-bz-ZeX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="XC4-fR-9U2">
+                    <connections>
+                        <action selector="tap:" destination="kIz-Nr-1Fg" id="h8n-nd-Z0c"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="889.85507246376824" y="132.58928571428572"/>
         </scene>
