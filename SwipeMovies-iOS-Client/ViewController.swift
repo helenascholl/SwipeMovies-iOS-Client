@@ -74,25 +74,17 @@ class ViewController: UIViewController {
     
     @IBAction func tap(_ sender: Any) {
         view.endEditing(true)
+        self.view.frame.origin.y = 0
     }
     
     override func viewDidLoad() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboadDidShow(keyBoardShowNotification:)), name: UIResponder.keyboardDidShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboadDidHide(keyBoardHideNotification:)), name: UIResponder.keyboardDidHideNotification, object: nil)
     }
     
     @objc func keyboadDidShow(keyBoardShowNotification notification: Notification) {
         if let userInfo = notification.userInfo, let keyboardRectangle = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
             UIView.animate(withDuration: 0.2, animations: {
                 self.view.frame.origin.y -= keyboardRectangle.height
-            })
-        }
-    }
-    
-    @objc func keyboadDidHide(keyBoardHideNotification notification: Notification) {
-        if let userInfo = notification.userInfo, let keyboardRectangle = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
-            UIView.animate(withDuration: 0.2, animations: {
-                self.view.frame.origin.y += keyboardRectangle.height
             })
         }
     }
