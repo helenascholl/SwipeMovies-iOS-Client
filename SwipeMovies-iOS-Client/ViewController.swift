@@ -76,6 +76,19 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
     
+    override func viewDidLoad() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboadDidShow(keyBoardShowNotification:)), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboadDidHide(keyBoardHideNotification:)), name: UIResponder.keyboardDidHideNotification, object: nil)
+    }
+    
+    @objc func keyboadDidShow(keyBoardShowNotification notification: Notification) {
+        print("keyboard show")
+    }
+    
+    @objc func keyboadDidHide(keyBoardHideNotification notification: Notification) {
+        print("keyboard hide")
+    }
+    
     func getBackendUrl() -> String {
         return Bundle.main.infoDictionary?["Backend URL"] as! String
     }
