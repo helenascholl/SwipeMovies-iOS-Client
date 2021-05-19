@@ -3,9 +3,11 @@ import UIKit
 class ViewController: UIViewController {
     
     let userId = 0
+    let inputBottomDefaultValue = CGFloat(-30)
     
     @IBOutlet weak var joinGroupText: UITextField!
     @IBOutlet weak var createGroupText: UITextField!
+    @IBOutlet weak var inputBottom: NSLayoutConstraint!
     
     @IBAction func joinGroupButton(_ sender: Any) {
         if let id = joinGroupText.text, let url = URL(string: "\(getBackendUrl())/api/users/\(userId)/groups") {
@@ -77,16 +79,26 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        inputBottom.constant = inputBottomDefaultValue
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboadDidShow(keyBoardShowNotification:)), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboadDidHide(keyBoardHideNotification:)), name: UIResponder.keyboardDidHideNotification, object: nil)
     }
     
     @objc func keyboadDidShow(keyBoardShowNotification notification: Notification) {
-        print("keyboard show")
+        if let userInfo = notification.userInfo, let keyboardRectangle = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
+            UIView.animate(withDuration: 0.2, animations: {
+                self.inputBottom.constant = keyboardRectangle.height * -1
+                self.view.layoutIfNeeded()
+            })
+        }
     }
     
     @objc func keyboadDidHide(keyBoardHideNotification notification: Notification) {
-        print("keyboard hide")
+        UIView.animate(withDuration: 0.2, animations: {
+            self.inputBottom.constant = self.inputBottomDefaultValue
+            self.view.layoutIfNeeded()
+        })
     }
     
     func getBackendUrl() -> String {

@@ -142,26 +142,26 @@
                                 <state key="normal" title="profile"/>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="group id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fn6-8A-83e">
-                                <rect key="frame" x="50" y="754" width="204.5" height="34"/>
+                                <rect key="frame" x="50" y="784" width="204.5" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSh-uu-23Q">
-                                <rect key="frame" x="285.5" y="756" width="69" height="30"/>
+                                <rect key="frame" x="285.5" y="786" width="69" height="30"/>
                                 <state key="normal" title="join group"/>
                                 <connections>
                                     <action selector="joinGroupButton:" destination="kIz-Nr-1Fg" eventType="touchUpInside" id="lnD-d6-JJ6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWI-eu-byR">
-                                <rect key="frame" x="276" y="800" width="88" height="30"/>
+                                <rect key="frame" x="276" y="830" width="88" height="30"/>
                                 <state key="normal" title="create group"/>
                                 <connections>
                                     <action selector="createGroupButton:" destination="kIz-Nr-1Fg" eventType="touchUpInside" id="dIY-vd-jWY"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="group name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gH2-7G-n3T">
-                                <rect key="frame" x="50" y="798" width="204.5" height="34"/>
+                                <rect key="frame" x="50" y="828" width="204.5" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -175,7 +175,7 @@
                             <constraint firstItem="ZLM-mL-891" firstAttribute="centerY" secondItem="0Up-b6-CgW" secondAttribute="centerY" constant="-40" id="GEi-LY-jnu"/>
                             <constraint firstItem="gH2-7G-n3T" firstAttribute="leading" secondItem="Fn6-8A-83e" secondAttribute="leading" id="SFw-fJ-3sb"/>
                             <constraint firstItem="ZLM-mL-891" firstAttribute="centerX" secondItem="0Up-b6-CgW" secondAttribute="centerX" constant="-50" id="WMg-cw-I3G"/>
-                            <constraint firstItem="gH2-7G-n3T" firstAttribute="bottom" secondItem="6bH-R1-ycl" secondAttribute="bottom" constant="-30" id="WQW-cq-aJH"/>
+                            <constraint firstItem="gH2-7G-n3T" firstAttribute="bottom" secondItem="6bH-R1-ycl" secondAttribute="bottom" id="WQW-cq-aJH"/>
                             <constraint firstItem="LWI-eu-byR" firstAttribute="centerX" secondItem="mSh-uu-23Q" secondAttribute="centerX" id="XvT-KK-PX9"/>
                             <constraint firstItem="Wrz-pX-QpY" firstAttribute="centerX" secondItem="0Up-b6-CgW" secondAttribute="centerX" constant="-50" id="ezn-Ss-xkP"/>
                             <constraint firstItem="mSh-uu-23Q" firstAttribute="centerY" secondItem="Fn6-8A-83e" secondAttribute="centerY" id="gto-f6-D9m"/>
@@ -197,6 +197,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="createGroupText" destination="gH2-7G-n3T" id="Gtf-h9-6VI"/>
+                        <outlet property="inputBottom" destination="WQW-cq-aJH" id="E9X-G7-N7B"/>
                         <outlet property="joinGroupText" destination="Fn6-8A-83e" id="NLS-e3-zvY"/>
                         <segue destination="HvJ-MO-co0" kind="show" identifier="swipe" id="DVF-do-sjM"/>
                         <segue destination="XnC-dk-cgp" kind="show" identifier="group" id="GJf-oV-yXj"/>
