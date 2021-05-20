@@ -1,3 +1,5 @@
+import UIKit
+
 class SwipeMoviesApi {
     
     private static var instance: SwipeMoviesApi?
@@ -13,6 +15,10 @@ class SwipeMoviesApi {
         }
         
         return instance!
+    }
+    
+    private func getBackendUrl() -> String {
+        return Bundle.main.infoDictionary?["Backend URL"] as! String
     }
 
 }
