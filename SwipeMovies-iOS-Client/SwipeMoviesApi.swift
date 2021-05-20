@@ -1,6 +1,6 @@
 class SwipeMoviesApi {
     
-    static var instance: SwipeMoviesApi?
+    private static var instance: SwipeMoviesApi?
     
     private init() {}
 
