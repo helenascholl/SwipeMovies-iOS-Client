@@ -13,18 +13,20 @@ class ViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.joinGroupText.text = ""
                     self.performSegue(withIdentifier: "group", sender: self)
-            }
+                }
             })
         }
     }
     
     @IBAction func createGroupButton(_ sender: Any) {
         if let name = createGroupText.text {
-            SwipeMoviesApi.getInstance().createGroup(name, {
-                DispatchQueue.main.async {
-                    self.createGroupText.text = ""
-                    self.performSegue(withIdentifier: "group", sender: self)
-                }
+            SwipeMoviesApi.getInstance().createGroup(name, { (_ group: Group) -> Void in
+                SwipeMoviesApi.getInstance().joinGroup(group.id, {
+                    DispatchQueue.main.async {
+                        self.createGroupText.text = ""
+                        self.performSegue(withIdentifier: "group", sender: self)
+                    }
+                })
             })
         }
     }
