@@ -71,8 +71,4 @@ class ViewController: UIViewController {
         }
     }
     
-    func getBackendUrl() -> String {
-        return Bundle.main.infoDictionary?["Backend URL"] as! String
-    }
-    
 }
