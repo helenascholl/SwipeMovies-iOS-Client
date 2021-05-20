@@ -32,31 +32,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func createGroupButton(_ sender: Any) {
-        if let name = createGroupText.text, let url = URL(string: "\(getBackendUrl())/api/groups") {
-            let json: [String: Any] = [
-                "user": [
-                    "id": userId
-                ],
-                "group": [
-                    "name": name
-                ]
-            ]
-            
-            if let jsonData = try? JSONSerialization.data(withJSONObject: json) {
-                var request = URLRequest(url: url)
-                
-                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-                
-                request.httpMethod = "POST"
-                request.httpBody = jsonData
-                
-                let task = URLSession.shared.dataTask(with: request)
-                task.resume()
-                
-                createGroupText.text = ""
-                
-                performSegue(withIdentifier: "group", sender: self)
-            }
+        if let name = createGroupText.text {
+            SwipeMoviesApi.getInstance().createGroup(name, {
+                DispatchQueue.main.async {
+                    self.createGroupText.text = ""
+                    self.performSegue(withIdentifier: "group", sender: self)
+                }
+            })
         }
     }
     
