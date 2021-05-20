@@ -8,26 +8,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var createGroupText: UITextField!
     
     @IBAction func joinGroupButton(_ sender: Any) {
-        if let id = joinGroupText.text, let url = URL(string: "\(getBackendUrl())/api/users/\(userId)/groups") {
-            let json: [String: Any] = [
-                "id": id
-            ]
-            
-            if let jsonData = try? JSONSerialization.data(withJSONObject: json) {
-                var request = URLRequest(url: url)
-                
-                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-                
-                request.httpMethod = "POST"
-                request.httpBody = jsonData
-                
-                let task = URLSession.shared.dataTask(with: request)
-                task.resume()
-                
-                joinGroupText.text = ""
-                
-                performSegue(withIdentifier: "group", sender: self)
+        if let idString = joinGroupText.text, let id = Int(idString) {
+            SwipeMoviesApi.getInstance().joinGroup(id, {
+                DispatchQueue.main.async {
+                    self.joinGroupText.text = ""
+                    self.performSegue(withIdentifier: "group", sender: self)
             }
+            })
         }
     }
     
