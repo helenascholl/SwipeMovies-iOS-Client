@@ -4,7 +4,7 @@ class SwipeMoviesApi {
     
     private init() {}
 
-    static func getInstance() -> SwipeMoviesApi {
+    public static func getInstance() -> SwipeMoviesApi {
         if instance === nil {
             instance = SwipeMoviesApi()
         }
