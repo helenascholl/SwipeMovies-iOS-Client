@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B930963F26563958004434C9 /* SwipeMoviesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B930963E26563958004434C9 /* SwipeMoviesApi.swift */; };
 		B952DF33263A862900BFB66E /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B952DF32263A862900BFB66E /* GroupViewController.swift */; };
 		B952DF37263A86DF00BFB66E /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = B952DF36263A86DF00BFB66E /* Group.swift */; };
 		B954BD4925FA024B002CFEA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B954BD4825FA024B002CFEA1 /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B930963E26563958004434C9 /* SwipeMoviesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeMoviesApi.swift; sourceTree = "<group>"; };
 		B952DF32263A862900BFB66E /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		B952DF36263A86DF00BFB66E /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		B954BD4825FA024B002CFEA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				C373ABC225EFDB2700E5CCE0 /* Movie.swift */,
 				C3147B36265433EB005A314C /* User.swift */,
 				B952DF36263A86DF00BFB66E /* Group.swift */,
+				B930963E26563958004434C9 /* SwipeMoviesApi.swift */,
 				B954BD4825FA024B002CFEA1 /* ViewController.swift */,
 				C3147B322639FFFD005A314C /* SwipeViewController.swift */,
 				B952DF32263A862900BFB66E /* GroupViewController.swift */,
@@ -190,6 +193,7 @@
 				B954BD4925FA024B002CFEA1 /* ViewController.swift in Sources */,
 				C3147B37265433EB005A314C /* User.swift in Sources */,
 				C373ABAD25EFCF8B00E5CCE0 /* AppDelegate.swift in Sources */,
+				B930963F26563958004434C9 /* SwipeMoviesApi.swift in Sources */,
 				C3147B3B26543F66005A314C /* MatchViewController.swift in Sources */,
 				C373ABAF25EFCF8B00E5CCE0 /* SceneDelegate.swift in Sources */,
 				C373ABC325EFDB2700E5CCE0 /* Movie.swift in Sources */,
