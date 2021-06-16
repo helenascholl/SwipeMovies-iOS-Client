@@ -34,7 +34,6 @@ class SwipeViewController: UIViewController {
     
     func swipeRight() {
         if currentIndex >= 0 {
-            print("Swiped right: \(movies[currentIndex].title)")
             swipedRight.append(movies[currentIndex])
             postSwipedMovie(SwipedMovie(movies[currentIndex], .right))
             showNextMovie()
@@ -43,7 +42,6 @@ class SwipeViewController: UIViewController {
     
     func swipeLeft() {
         if currentIndex >= 0 {
-            print("Swiped left: \(movies[currentIndex].title)")
             swipedLeft.append(movies[currentIndex])
             postSwipedMovie(SwipedMovie(movies[currentIndex], .left))
             showNextMovie()
