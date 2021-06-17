@@ -80,39 +80,12 @@ class SwipeViewController: UIViewController {
     }
     
     func addNewMovies(_ callback: @escaping () -> ()) {
-        queue.async {
-            if let url = URL(string: "\(self.getBackendUrl())/api/users/\(self.userId)/movies") {
-                self.downloadMovies(url, callback)
-            } else {
-                print("Cannot resolve URL")
+        SwipeMoviesApi.getInstance().getMovies({ (_ movies: [Movie]) -> Void in
+            DispatchQueue.main.async {
+                self.movies.append(contentsOf: movies)
+                callback()
             }
-        }
-    }
-    
-    func downloadMovies(_ url: URL, _ callback: @escaping () -> ()) {
-        if let data = try? Data(contentsOf: url) {
-            if let movies = try? JSONSerialization.jsonObject(with: data, options: []) as? [Any] {
-                var downloadedMovies: [Movie] = []
-                
-                for movie in movies {
-                    if let dict = movie as? [String: Any] {
-                        let id = dict["id"] as! Int
-                        let title = dict["title"] as! String
-                        let description = dict["description"] as! String
-                        let posterUrl = dict["posterUrl"] as! String
-                        
-                        downloadedMovies.append(Movie(id, title, description, posterUrl))
-                    }
-                }
-                
-                DispatchQueue.main.async {
-                    self.movies.append(contentsOf: downloadedMovies)
-                    callback()
-                }
-            }
-        } else {
-            print("Download failed")
-        }
+        })
     }
     
     func getBackendUrl() -> String {
