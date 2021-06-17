@@ -4,7 +4,6 @@ class SwipeViewController: UIViewController {
     
     let queue = DispatchQueue(label: "download")
     let posterBaseUrl = "https://image.tmdb.org/t/p/w200"
-    let userId = 0
     
     var movies: [Movie] = []
     var currentIndex: Int = -1
