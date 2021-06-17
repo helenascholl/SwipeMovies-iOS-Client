@@ -64,6 +64,29 @@ class SwipeMoviesApi {
         }
     }
     
+    public func getGroups(_ callback: @escaping (_ groups: [Group]) -> Void) {
+        var groups: [Group] = []
+        
+        if let user = user, let url = URL(string: "\(getBackendUrl())/api/users/\(user.id)/groups") {
+            if let data = try? Data(contentsOf: url) {
+                if let json = try? JSONSerialization.jsonObject(with: data, options: []), let array = json as? [Any] {
+                    for obj in array {
+                        if let dict = obj as? [String: Any] {
+                            let group = Group(dict["id"] as! Int, dict["name"] as! String)
+                            groups.append(group)
+                        }
+                    }
+                    
+                    callback(groups)
+                }
+            } else {
+                print("Download failed")
+            }
+        } else {
+            print("Cannot resolve URL")
+        }
+    }
+    
     private func getBackendUrl() -> String {
         return Bundle.main.infoDictionary?["Backend URL"] as! String
     }
