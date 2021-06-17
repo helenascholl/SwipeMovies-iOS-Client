@@ -35,7 +35,7 @@ class SwipeViewController: UIViewController {
     func swipeRight() {
         if currentIndex >= 0 {
             swipedRight.append(movies[currentIndex])
-            postSwipedMovie(SwipedMovie(movies[currentIndex], .right))
+            SwipeMoviesApi.getInstance().postSwipedMovie(SwipedMovie(movies[currentIndex], .right))
             showNextMovie()
         }
     }
@@ -43,7 +43,7 @@ class SwipeViewController: UIViewController {
     func swipeLeft() {
         if currentIndex >= 0 {
             swipedLeft.append(movies[currentIndex])
-            postSwipedMovie(SwipedMovie(movies[currentIndex], .left))
+            SwipeMoviesApi.getInstance().postSwipedMovie(SwipedMovie(movies[currentIndex], .left))
             showNextMovie()
         }
     }
@@ -117,32 +117,6 @@ class SwipeViewController: UIViewController {
     
     func getBackendUrl() -> String {
         return Bundle.main.infoDictionary?["Backend URL"] as! String
-    }
-    
-    func postSwipedMovie(_ swipedMovie: SwipedMovie) {
-        if let url = URL(string: "\(getBackendUrl())/api/users/\(userId)/movies/swiped") {
-            let json: [String: Any] = [
-                "movie": [
-                    "id": swipedMovie.movie.id,
-                    "title": swipedMovie.movie.title,
-                    "description": swipedMovie.movie.description,
-                    "posterUrl": swipedMovie.movie.posterUrl
-                ],
-                "swipeDirection": swipedMovie.swipeDirection == .right ? "right" : "left"
-            ]
-            
-            if let jsonData = try? JSONSerialization.data(withJSONObject: json) {
-                var request = URLRequest(url: url)
-                
-                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-                
-                request.httpMethod = "POST"
-                request.httpBody = jsonData
-                
-                let task = URLSession.shared.dataTask(with: request)
-                task.resume()
-            }
-        }
     }
 
 }
