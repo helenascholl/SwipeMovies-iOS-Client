@@ -87,6 +87,32 @@ class SwipeMoviesApi {
         }
     }
     
+    public func postSwipedMovie(_ swipedMovie: SwipedMovie) {
+        if let user = user, let url = URL(string: "\(getBackendUrl())/api/users/\(user.id)/movies/swiped") {
+            let json: [String: Any] = [
+                "movie": [
+                    "id": swipedMovie.movie.id,
+                    "title": swipedMovie.movie.title,
+                    "description": swipedMovie.movie.description,
+                    "posterUrl": swipedMovie.movie.posterUrl
+                ],
+                "swipeDirection": swipedMovie.swipeDirection == .right ? "right" : "left"
+            ]
+            
+            if let jsonData = try? JSONSerialization.data(withJSONObject: json) {
+                var request = URLRequest(url: url)
+                
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                
+                request.httpMethod = "POST"
+                request.httpBody = jsonData
+                
+                let task = URLSession.shared.dataTask(with: request)
+                task.resume()
+            }
+        }
+    }
+    
     private func getBackendUrl() -> String {
         return Bundle.main.infoDictionary?["Backend URL"] as! String
     }
