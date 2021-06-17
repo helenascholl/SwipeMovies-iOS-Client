@@ -2,8 +2,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let userId = 0
-    
     @IBOutlet weak var joinGroupText: UITextField!
     @IBOutlet weak var createGroupText: UITextField!
     
