@@ -3,11 +3,15 @@ import UIKit
 class GroupViewController: UITableViewController {
     
     var groups: [Group] = []
-    var userId = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.download()
+        SwipeMoviesApi.getInstance().getGroups({ (_ groups: [Group]) -> Void in
+            DispatchQueue.main.async {
+                self.groups = groups
+                self.tableView.reloadData()
+            }
+        })
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -23,33 +27,6 @@ class GroupViewController: UITableViewController {
         cell.textLabel?.text = groups[indexPath.row].name
 
         return cell
-    }
-    
-    func download() {
-        var downloadedGroups: [Group] = []
-        
-        if let url = URL(string: "\(getBackendUrl())/api/users/\(userId)/groups") {
-            if let data = try? Data(contentsOf: url) {
-                if let json = try? JSONSerialization.jsonObject(with: data, options: []), let array = json as? [Any] {
-                    for obj in array {
-                        if let dict = obj as? [String: Any] {
-                            let group = Group(dict["id"] as! Int, dict["name"] as! String)
-                            downloadedGroups.append(group)
-                        }
-                    }
-                    
-                    DispatchQueue.main.async {
-                        self.groups = downloadedGroups
-                        self.tableView.reloadData()
-                    }
-                }
-            } else {
-                print("Download failed")
-            }
-        } else {
-            print("Cannot resolve URL")
-        }
-        
     }
     
     func getBackendUrl() -> String {
