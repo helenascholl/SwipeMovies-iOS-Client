@@ -113,6 +113,31 @@ class SwipeMoviesApi {
         }
     }
     
+    public func getMovies(_ callback: @escaping (_ movies: [Movie]) -> Void) {
+        if let user = user, let url = URL(string: "\(self.getBackendUrl())/api/users/\(user.id)/movies") {
+            if let data = try? Data(contentsOf: url) {
+                if let movieArray = try? JSONSerialization.jsonObject(with: data, options: []) as? [Any] {
+                    var movies: [Movie] = []
+                    
+                    for movie in movieArray {
+                        if let dict = movie as? [String: Any] {
+                            let id = dict["id"] as! Int
+                            let title = dict["title"] as! String
+                            let description = dict["description"] as! String
+                            let posterUrl = dict["posterUrl"] as! String
+                            
+                            movies.append(Movie(id, title, description, posterUrl))
+                        }
+                    }
+                    
+                    callback(movies)
+                }
+            } else {
+                print("Download failed")
+            }
+        }
+    }
+    
     private func getBackendUrl() -> String {
         return Bundle.main.infoDictionary?["Backend URL"] as! String
     }
