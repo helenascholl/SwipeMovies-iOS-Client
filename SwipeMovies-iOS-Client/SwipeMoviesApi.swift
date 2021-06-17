@@ -138,6 +138,40 @@ class SwipeMoviesApi {
         }
     }
     
+    public func getMatches(_ callback: @escaping (_ matches: [Match]) -> Void) {
+        var matches: [Match] = []
+        
+        if let user = user, let url = URL(string: "\(getBackendUrl())/api/users/\(user.id)/matches") {
+            if let data = try? Data(contentsOf: url) {
+                if let json = try? JSONSerialization.jsonObject(with: data, options: []), let array = json as? [Any] {
+                    for obj in array {
+                        if let dict = obj as? [String: Any] {
+                            if let movie = dict["movie"] as? [String: Any] {
+                                let match = Match(Movie(movie["id"] as! Int, movie["title"] as! String, movie["description"] as! String, movie["posterUrl"] as! String))
+                                
+                                if let users = dict["users"] as? [Any] {
+                                    for userObj in users {
+                                        if let user = userObj as? [String: Any] {
+                                            match.addUser(User(user["id"] as! Int, user["username"] as! String))
+                                        }
+                                    }
+
+                                    matches.append(match)
+                                }
+                            }
+                        }
+                    }
+                    
+                    callback(matches)
+                }
+            } else {
+                print("Download failed")
+            }
+        } else {
+            print("Cannot resolve URL")
+        }
+    }
+    
     private func getBackendUrl() -> String {
         return Bundle.main.infoDictionary?["Backend URL"] as! String
     }
